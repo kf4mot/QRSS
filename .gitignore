@@ -1,1 +1,28 @@
-arduino_work/
+# Arduino build artifacts
+*.ino.*
+*.cpp.*
+*.h.*
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.eep
+*.map
+*.tmp
+*.log
+
+# Arduino IDE temporary folders
+/build/
+*.bak
+*.orig
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Arduino local libraries (never tracked in repo)
+libraries/
+Adafruit_*
