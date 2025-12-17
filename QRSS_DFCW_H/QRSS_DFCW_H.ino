@@ -67,7 +67,8 @@ const int sym_pause = dit;    // silencio entre símbolos
 const int char_pause = dit*3; // silencio entre letras
 
 // -------------------- MENSAJE MORSE --------------------
-const char* message[] = {".", ".-", ".....", ".---", "-", "-", NULL};
+//const char* message[] = {".", ".-", ".....", ".---", "-", "-", NULL};
+const char* message[] = {"-.-", "..-.", "....-", "--", "---", "-", NULL};
 
 // -------------------- DFCW HARD --------------------
 void sendSymbol_DFCW(char s) {
