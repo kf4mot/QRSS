@@ -40,8 +40,8 @@ Desde QRSS3, QRSS19, ... hasta QRSS120
 
 // -------------------- OLED --------------------
 //#define OLED_RST NOT_A_PIN
-#define OLED_SDA 21
-#define OLED_SCL 22
+#define OLED_SDA 6
+#define OLED_SCL 7
 //Adafruit_SSD1306 display(OLED_RST);
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -55,7 +55,7 @@ Si5351 si5351;
 
 // -------------------- FRECUENCIAS DFCW --------------------
 // Corrección de tu SI5351
-int32_t manual_offset_hz = -1490;
+int32_t manual_offset_hz = -145;  //freq. calibration
 
 // Base QRSS
 uint64_t base = (10140000ULL + manual_offset_hz) * 100ULL;
@@ -74,7 +74,7 @@ const int char_pause = dit*3; // silencio entre letras
 
 // -------------------- MENSAJE MORSE --------------------
 //const char* message[] = {".", ".-", ".....", ".---", "-", "-", NULL};
-const char* message[] = {"-.-", "..-.", "....-", "--", "---", "-", NULL};
+const char* message[] = {"-.-", "..-.", "....-", "--", "---", "-", NULL}; //kf4mot
 
 // -------------------- DFCW HARD --------------------
 void sendSymbol_DFCW(char s) {
@@ -125,7 +125,7 @@ void setup() {
   }
 
   si5351.set_freq(SPACE, SI5351_CLK1);
-  si5351.drive_strength(SI5351_CLK1, SI5351_DRIVE_2MA);
+  si5351.drive_strength(SI5351_CLK1, SI5351_DRIVE_6MA);
   si5351.output_enable(SI5351_CLK1, 0);
 
   display.setCursor(0, 26);

@@ -26,3 +26,4 @@ Thumbs.db
 # Arduino local libraries (never tracked in repo)
 libraries/
 Adafruit_*
+Credentials*
